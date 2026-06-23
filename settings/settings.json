@@ -1,0 +1,149 @@
+{
+  // ==========================================
+  // WORKBENCH & INTERFACE
+  // Configuracoes de abas, temas e layout da IDE
+  // ==========================================
+
+  // Define o tema de icones usado no explorador de arquivos.
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Define o tema visual principal da interface da IDE.
+  "workbench.colorTheme": "Default Dark Modern",
+
+  // Impede que a IDE abra uma tela inicial ao iniciar.
+  "workbench.startupEditor": "none",
+
+  // Exibe sempre as guias verticais de indentacao na arvore de arquivos.
+  "workbench.tree.renderIndentGuides": "always",
+
+  // ==========================================
+  // Configuracoes de abas
+  // ==========================================
+
+  // Controla como as abas abertas sao exibidas no editor.
+  "workbench.editor.showTabs": "multiple",
+
+  // Permite quebrar as abas em mais de uma linha quando houver muitas abertas.
+  "workbench.editor.wrapTabs": true,
+
+  // Mantem abas fixadas em uma linha separada das demais abas.
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+
+  // ==========================================
+  // EDITOR & FORMATTING
+  // Configuracoes de salvamento, formatacao e acoes automaticas
+  // ==========================================
+
+  // Formata automaticamente o arquivo sempre que ele for salvo.
+  "editor.formatOnSave": true,
+
+  // Define o Prettier como formatador padrao geral da IDE.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Define o tamanho da tabulacao usada pelo editor.
+  "editor.tabSize": 2,
+
+  // Insere espacos ao pressionar Tab. Troque para false se quiser caractere de tab real.
+  "editor.insertSpaces": true,
+
+  // Salva automaticamente os arquivos apos um pequeno intervalo.
+  "files.autoSave": "afterDelay",
+
+  // Oculta o aviso de depreciacao da extensao Rainbow Brackets.
+  "RainbowBrackets.depreciation-notice": false,
+
+  // Executa correcoes automaticas do ESLint ao salvar, quando disponiveis.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+  },
+
+  // Define quais linguagens devem ser validadas pelo ESLint.
+  "eslint.validate": ["javascript", "typescript", "vue"],
+
+  // ==========================================
+  // LANGUAGE SPECIFIC FORMATTERS
+  // Formatadores especificos por linguagem
+  // ==========================================
+
+  // Define o prettier como formatador padrao para arquivos Vue.
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Define o formatador nativo da IDE como padrao para arquivos HTML.
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+  },
+
+  // Define o formatador nativo da IDE como padrao para arquivos TypeScript.
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+
+  // Define o formatador nativo da IDE como padrao para arquivos CSS.
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+  },
+
+  // Define o formatador nativo da IDE como padrao para arquivos SCSS.
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+  },
+
+  // ==========================================
+  // IMPORTS & BEHAVIOR
+  // Comportamentos automaticos da IDE em imports, Git e projetos
+  // ==========================================
+
+  // Atualiza imports JavaScript automaticamente quando arquivos forem movidos.
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Atualiza imports TypeScript automaticamente quando arquivos forem movidos.
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Permite que a IDE reconheca repositorios Git em pastas acima da pasta aberta.
+  "git.openRepositoryInParentFolders": "always",
+
+  // ==========================================
+  // AI & COPILOT SETTINGS
+  // Configuracoes de assistentes de IA e GitLens
+  // ==========================================
+
+  // Define que o GitLens deve usar o provedor de IA integrado da IDE.
+  "gitlens.ai.model": "vscode",
+
+  // Define o modelo usado pelo GitLens quando conectado ao Copilot.
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  // Desativa sugestoes de proxima edicao do GitHub Copilot.
+  "github.copilot.nextEditSuggestions.enabled": false,
+
+  // Desativa o GitHub Copilot por padrao e tambem em linguagens especificas.
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescript": false,
+  },
+
+  // ==========================================
+  // EXTENSIONS & OTHERS
+  // Configuracoes de extensoes, Docker, JSON Schema e dominios confiaveis
+  // ==========================================
+
+  // Desativa o language server de Docker Compose fornecido pela extensao Docker.
+  "docker.extension.enableComposeLanguageServer": false,
+
+  // Define dominios confiaveis para download automatico de schemas JSON.
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true,
+  },
+}
