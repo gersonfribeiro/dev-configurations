@@ -70,24 +70,24 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
-  // Define o formatador nativo da IDE como padrao para arquivos HTML.
+  // Define o Prettier como padrao para arquivos HTML.
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
-  // Define o formatador nativo da IDE como padrao para arquivos TypeScript.
+  // Define o Prettier como padrao para arquivos TypeScript.
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
-  // Define o formatador nativo da IDE como padrao para arquivos CSS.
+  // Define o Prettier como padrao para arquivos CSS.
   "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
-  // Define o formatador nativo da IDE como padrao para arquivos SCSS.
+  // Define o Prettier como padrao para arquivos SCSS.
   "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // ==========================================
