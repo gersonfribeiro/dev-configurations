@@ -827,3 +827,49 @@ Desenvolvedor Backend especialista em Java, Spring Boot, APIs REST, segurança, 
 * Manter nomes consistentes entre DTOs, services, repositories e entidades.
 * Não misturar responsabilidade de infraestrutura com regra de negócio.
 * Tratamento de exceções deve ser centralizado quando possível.
+
+# 6. Utilização de MCPs
+
+## 6.1 Prototipagem
+
+Durante a etapa de prototipagem, os agentes de IA devem utilizar os recursos do pen.dev para criar protótipos de interface. Sempre que criar um protótipo de interface, o link do protótipo deve ser compartilhado com o usuário para validação. Além disso, após a validação do protótipo, o agente deve gerar o código da interface utilizando os recursos do pen.dev.
+
+Somente implementar o código que for aprovado na prototipagem. A especificação de conversão do protótipo em código deve ser feita utilizando os recursos do pen.dev. A linguagem e o Framework devem seguir o padrão de nossos projetos.
+
+## 6.2 Consultas
+
+Nenhum recurso deve ser implementado com base em suposições, com isso a fonte da verdade se torna as implementações sugeridas pelas documentações. O MCP do context7 deve ser utilizado para auxiliar em consultas relacionadas as documentações. Para toda requisição envolvendo frameworks de frontend ou backend, você deve obrigatoriamente acionar o MCP do context7 para buscar a documentação oficial atualizada antes de propor a implementação ou arquitetura.
+
+## 6.3 Testes automatizados
+
+Utilização de Kafka para implementação de testes automatizados voltados ao backend, para o frontend a ferramenta recomendada é o Playwright. A Utilização desses MCP's devem fazer parte das especificações de implementação quando solicitado.
+
+## 6.4 Validação de código
+
+A utilização do MCP do SonarQube deve ser feita para auxiliar na validação de código, garantindo que o código siga os padrões de qualidade e segurança estabelecidos. A Utilização desses MCP's devem fazer parte das especificações de implementação quando solicitado.
+
+## 6.5 Deploy e CI/CD
+
+Espera-se para as entregas de implantação de aplicações em ambientes de produção, que passem antes por diversos processos de CI/CD, pipelines com a execução de testes automatizados, processos de validação de código e build, por fim, implantação em ambiente de staging/sandbox para validação. Utilizar MCPs fornecidos pela AWSLabs, GitHub Actions, Jenkins, Cloudflare, Docker, Kubernetes e Terraform para auxiliar na implementação desses processos.
+
+# 7. Entregas
+
+## 7.1 Testes automatizados
+
+Implementações de recursos, refatorações ou integrações, sejam para aplicações MVP, Micro-serviços, Aplicações Mobile ou Sistemas SaaS, devem conter testes automatizados, tanto para backend quanto para frontend. Novos recursos devem possuir casos de teste, quando o recursos ja existir, deve-se criar casos de teste para validar o novo recurso. Quando for o caso de refatoração, deve-se criar casos de teste para validar a refatoração. A Utilização de Kafka para implementação de testes automatizados voltados ao backend, para o frontend a ferramenta recomendada é o Playwright. A Utilização desses MCP's devem fazer parte das especificações de implementação quando solicitado.
+
+## 7.2 Validação de código
+
+A utilização do MCP do SonarQube deve ser feita para auxiliar na validação de código, garantindo que o código siga os padrões de qualidade e segurança estabelecidos. A Utilização desses MCP's devem fazer parte das especificações de implementação quando solicitado. Além disso, fora da utilização dos MCP's, fazer validações com o ESLint para o frontend.
+
+## 7.3 Validações finais
+
+Execução de type-check, validação da execução da aplicação em um ambiente com docker-compose.yml, consoles não devem apresentar erros, e deve-se validar se os testes automatizados estão sendo executados com sucesso e sem erros neste ambiente do compose.
+
+## 7.4 Build
+
+Toda entrega de recursos deve ser acompanhada de build de código, seja para frontend ou backend.
+
+## 7.5 Garantias
+
+Garantias de que todas as tarefas foram executadas, estejam em um estado funcional e que estejam de acordo com as especificações.
