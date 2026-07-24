@@ -1,12 +1,10 @@
 {
+  "name": "pencil",
+  "transport": "stdio",
+  "command": "<caminho_do_executavel_do_pencil>",
+  "args": ["--app", "desktop"],
+  "env": {},  
   "mcpServers": {
-    "pencil": {
-      "command": "<caminho_do_executavel_do_pencil>",
-      "args": [
-        "--app",
-        "desktop"
-      ]
-    },
     "context7": {
       "command": "npx",
       "args": [
