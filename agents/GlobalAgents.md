@@ -873,3 +873,17 @@ Toda entrega de recursos deve ser acompanhada de build de código, seja para fro
 ## 7.5 Garantias
 
 Garantias de que todas as tarefas foram executadas, estejam em um estado funcional e que estejam de acordo com as especificações.
+
+# 8. MCP's
+
+## 8.1 context7
+Utilize o Context7 MCP para buscar a documentação atualizada sempre que o usuário perguntar sobre uma biblioteca, framework, SDK, API, ferramenta de CLI ou serviço de nuvem — mesmo os mais conhecidos, como React, Next.js, Prisma, Express, Tailwind, Django ou Spring Boot. Isso inclui sintaxe de API, configuração, migração de versão, depuração específica da biblioteca, instruções de instalação e uso de ferramentas de CLI. Utilize a ferramenta mesmo quando achar que já sabe a resposta; seus dados de treinamento podem não refletir alterações recentes. Dê preferência a esse método em vez de pesquisas na web para documentação de bibliotecas.
+
+Não utilize para: refatoração, criação de scripts do zero, depuração de lógica de negócios, revisão de código ou conceitos gerais de programação.
+
+#### Etapas
+
+1. Sempre comece com `resolve-library-id` usando o nome da biblioteca e a pergunta do usuário, a menos que o usuário forneça um ID de biblioteca exato no formato `/org/project`
+2. Escolha a melhor correspondência (formato do ID: `/org/project`) com base em: correspondência exata do nome, relevância da descrição, quantidade de trechos de código, reputação da fonte (preferencialmente Alta/Média) e pontuação de benchmark (quanto maior, melhor). Se os resultados não parecerem adequados, tente nomes ou consultas alternativos (por exemplo, "next.js" em vez de "nextjs", ou reformule a pergunta). Utilize IDs específicos de versão quando o usuário mencionar uma versão
+3. Execute `query-docs` com o ID da biblioteca selecionado e a pergunta completa do usuário (não apenas palavras isoladas), restringindo a consulta a um único conceito. Se a pergunta abranger vários conceitos distintos (por exemplo, roteamento, autenticação e cache), faça uma chamada `query-docs` separada para cada conceito usando o mesmo ID de biblioteca, a menos que a pergunta seja sobre como os conceitos interagem — consultas combinadas diluem a classificação e retornam resultados superficiais para cada tópico
+4. Responda utilizando a documentação obtida.
