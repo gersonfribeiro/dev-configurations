@@ -887,3 +887,63 @@ Não utilize para: refatoração, criação de scripts do zero, depuração de l
 2. Escolha a melhor correspondência (formato do ID: `/org/project`) com base em: correspondência exata do nome, relevância da descrição, quantidade de trechos de código, reputação da fonte (preferencialmente Alta/Média) e pontuação de benchmark (quanto maior, melhor). Se os resultados não parecerem adequados, tente nomes ou consultas alternativos (por exemplo, "next.js" em vez de "nextjs", ou reformule a pergunta). Utilize IDs específicos de versão quando o usuário mencionar uma versão
 3. Execute `query-docs` com o ID da biblioteca selecionado e a pergunta completa do usuário (não apenas palavras isoladas), restringindo a consulta a um único conceito. Se a pergunta abranger vários conceitos distintos (por exemplo, roteamento, autenticação e cache), faça uma chamada `query-docs` separada para cada conceito usando o mesmo ID de biblioteca, a menos que a pergunta seja sobre como os conceitos interagem — consultas combinadas diluem a classificação e retornam resultados superficiais para cada tópico
 4. Responda utilizando a documentação obtida.
+
+# 9. Setup e Configuração de Ferramentas
+
+## 9.1 Instalação do ESLint + Prettier para Vue 3 e TypeScript
+
+```
+npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-plugin-prettier @eslint/js globals typescript typescript-eslint
+```
+
+> Esse comando já instala todos os pacotes necessários para ambos os formatadores e suporte a TypeScript.
+
+### Scripts para o `package.json`
+
+```json
+{
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write"
+  }
+}
+```
+
+### Uso
+
+| Comando | Ação |
+|---|---|
+| `npm run lint` | Verifica problemas de lint |
+| `npm run lint:fix` | Corrige automaticamente problemas corrigíveis |
+| `npm run format` | Formata todo o projeto com Prettier |
+
+## 9.2 Instalação do commitlint + Husky
+
+```
+npm install -D @commitlint/cli @commitlint/config-conventional husky
+npx husky init
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+### Scripts para o `package.json`
+
+```json
+{
+  "scripts": {
+    "prepare": "husky"
+  }
+}
+```
+
+> O script `prepare` é executado automaticamente após `npm install` para ativar os hooks do Husky.
+
+## 9.3 Arquivos de configuração
+
+Os arquivos de configuração padronizados estão disponíveis no repositório de configurações:
+
+- [ESLint (.eslintrc.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [Prettier (prettier.config.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [commitlint (commitlint.config.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [EditorConfig (.editorconfig)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [VSCode Settings](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)

@@ -1,15 +1,16 @@
-# Comandos de configuração em projeto existente ou inicial
+# 1. Comandos de configuração em projeto existente ou inicial
 
-### Instalação do ESLint + Prettier para Vue 3 e TS:
+## 1.1 Instalação do ESLint + Prettier para Vue 3 e TypeScript
+
 ```
 npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-plugin-prettier @eslint/js globals typescript typescript-eslint
 ```
-- Esse comando já faz toda a configuração da instalação de pacotes de ambos os formatadores e ainda adiciona a parte do typescript
 
+> Esse comando já instala todos os pacotes necessários para ambos os formatadores e suporte a TypeScript.
 
-### Considerando que os arquivos de [settings]('https://github.com/gersonfribeiro/dev-configurations/tree/main/settings') de ambos já estão configurados:
-#### package.json
-```
+### Scripts para o `package.json`
+
+```json
 {
   "scripts": {
     "lint": "eslint .",
@@ -18,7 +19,41 @@ npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-p
   }
 }
 ```
-##### Adicionando esses scripts de comandos ao arquivo, facilita o uso no projeto com o npm
-- *Verificar problemas:* npm run lint;
-- *Corrigir automaticamente:* npm run lint:fix;
-- *Formatar todo o projeto:* npm run format;
+
+### Uso
+
+| Comando | Ação |
+|---|---|
+| `npm run lint` | Verifica problemas de lint |
+| `npm run lint:fix` | Corrige automaticamente problemas corrigíveis |
+| `npm run format` | Formata todo o projeto com Prettier |
+
+## 1.2 Instalação do commitlint + Husky
+
+```
+npm install -D @commitlint/cli @commitlint/config-conventional husky
+npx husky init
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+### Scripts para o `package.json`
+
+```json
+{
+  "scripts": {
+    "prepare": "husky"
+  }
+}
+```
+
+> O script `prepare` é executado automaticamente após `npm install` para ativar os hooks do Husky.
+
+## 1.3 Arquivos de configuração
+
+Os arquivos de configuração padronizados estão disponíveis no repositório de configurações:
+
+- [ESLint (.eslintrc.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [Prettier (prettier.config.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [commitlint (commitlint.config.cjs)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [EditorConfig (.editorconfig)](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)
+- [VSCode Settings](https://github.com/gersonfribeiro/dev-configurations/tree/main/settings)

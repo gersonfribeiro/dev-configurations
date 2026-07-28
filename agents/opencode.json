@@ -9,14 +9,14 @@
         "gateway",
         "run",
         "--profile",
-        "<name_profile_docker_toolkit>"
+        "<nome_profile_docker_toolkit>"
       ],
       "enabled": true
     },
     "pencil": {
       "type": "local",
       "command": [
-        "C:\\Users\\gerso\\.pencil\\mcp\\antigravity_ide\\out\\mcp-server-windows-x64.exe",
+        "<caminho_do_executavel_do_pencil>",
         "--app",
         "antigravity_ide",
         "--agent",

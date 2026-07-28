@@ -1,0 +1,37 @@
+{
+  "servers": {
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run",
+        "--profile",
+        "<nome_profile_docker_toolkit>"
+      ],
+      "env": {
+        "LOCALAPPDATA": "C:\\Users\\{user}\\AppData\\Local",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files"
+      },
+      "type": "stdio"
+    },
+    "pencil": {
+      "command": "<caminho_do_executavel_do_pencil>",
+      "args": [
+        "--app",
+        "visual_studio_code",
+        "--agent",
+        "copilotIDE"
+      ],
+      "env": {},
+      "type": "stdio"
+    },
+    "context7": {
+      "serverUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+      }
+    }
+  }
+}
