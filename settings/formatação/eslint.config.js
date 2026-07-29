@@ -1,3 +1,4 @@
+// Imports do ESLint
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
@@ -77,6 +78,7 @@ export default tseslint.config(
         },
       ],
       'simple-import-sort/exports': 'error',
+      'no-undef': 'off',
     },
   },
   prettierConfig,
@@ -112,12 +114,18 @@ export default tseslint.config(
         'error',
         {
           order: [
-            'CONDITIONALS',
+            'DEFINITION',
             'LIST_RENDERING',
+            'CONDITIONALS',
+            'RENDER_MODIFIERS',
+            'SLOT',
             'TWO_WAY_BINDING',
             'OTHER_DIRECTIVES',
-            'OTHER_ATTR',
+            'ATTR_DYNAMIC',
+            'ATTR_STATIC',
+            'ATTR_SHORTHAND_BOOL',
             'EVENTS',
+            'CONTENT',
           ],
           alphabetical: false,
         },
@@ -131,6 +139,10 @@ export default tseslint.config(
         {
           order: ['template', 'script', 'style'],
         },
+      ],
+      'vue/v-on-event-hyphenation': [
+        'error',
+        'never'
       ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': [
