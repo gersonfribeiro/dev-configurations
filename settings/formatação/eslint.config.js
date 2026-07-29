@@ -169,7 +169,7 @@ export default tseslint.config(
         },
         {
           selector: 'parameter',
-          format: ['camelCase'],
+          format: ['camelCase', 'PascalCase'],
           prefix: ['p'],
         },
       ],
