@@ -1,8 +1,10 @@
+// Imports do ESLint
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import jsdoc from 'eslint-plugin-jsdoc';
 
 /**
  * @description Configuração do ESLint para o frontend (flat config).
@@ -51,9 +53,9 @@ export default tseslint.config(
             ['^\\u0000'],
             [
               '^vue$',
+              '^vue-i18n',
               '^pinia',
               '^vue-router',
-              'vue-i18n',
               '^vuetify',
               '^@mdi',
               '^axios',
@@ -79,6 +81,22 @@ export default tseslint.config(
       ],
       'simple-import-sort/exports': 'error',
       'no-undef': 'off',
+    },
+  },
+  {
+    plugins: {
+      jsdoc,
+    },
+    rules: {
+      'jsdoc/require-description': ['warn', { descriptionStyle: 'tag' }],
+      'jsdoc/require-param': 'warn',
+      'jsdoc/require-param-description': 'warn',
+      'jsdoc/require-returns': 'warn',
+      'jsdoc/require-returns-description': 'warn',
+      'jsdoc/require-property': 'warn',
+      'jsdoc/require-property-description': 'warn',
+      'jsdoc/require-property-name': 'warn',
+      'jsdoc/require-property-type': 'off',
     },
   },
   prettierConfig,
