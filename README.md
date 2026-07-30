@@ -1,40 +1,31 @@
 # dev-configurations
-Persistência de arquivos de configuração de IDE's, Agentes de IA, Skills, JSON de configurações...
 
-# Development Workspace Configuration
+**Repositório de referência para configuração de novos projetos.**
 
-Este repositório centraliza configurações, agentes de IA, convenções de desenvolvimento e recursos compartilhados utilizados no ambiente de trabalho.
+Na prática, é o lugar onde eu mantenho anotado:
 
-## Objetivo
+- Os comandos de setup que eu vou esquecer se não escrever
+- O padrão de `config/` que deu trabalho descobrir
+- As diretrizes dos agentes de IA que uso em todos os projetos
+- Os arquivos de configuração que eu copio quando crio um boilerplate novo
 
-Manter um conjunto versionado de padrões e configurações para garantir consistência entre diferentes máquinas, projetos e ferramentas de desenvolvimento.
+---
 
-## Conteúdo
-
-* **Agents**: definições de contexto, responsabilidades e diretrizes para agentes de IA.
-* **Prompts**: instruções reutilizáveis para automação de tarefas.
-* **Settings**: configurações de IDEs e ferramentas de desenvolvimento.
-* **Snippets**: trechos de código reutilizáveis.
-* **Documentação**: convenções arquiteturais, padrões de nomenclatura e boas práticas adotadas nos projetos.
-
-## Benefícios
-
-* Padronização do desenvolvimento.
-* Reutilização de conhecimento entre projetos.
-* Facilidade de configuração em novas máquinas.
-* Versionamento das regras e decisões técnicas do time.
-
-## Estrutura
+## O que tem aqui
 
 ```text
-.
-├── agents/
-├── prompts/
-├── settings/
-├── snippets/
-└── docs/
+dev-configurations/
+├── agents/             ← Diretrizes, skills e contexto para agentes de IA
+├── settings/           ← Padrões de configuração de ferramentas + comandos de setup
+├── snippets/           ← Trechos de código reutilizáveis
+├── prompts/            ← Instruções reutilizáveis para automação
+└── docs/               ← Convenções arquiteturais e boas práticas
 ```
 
-## Observações
+## Como usar
 
-Este repositório deve ser tratado como a fonte oficial das convenções e configurações utilizadas no ambiente de desenvolvimento.
+Cada projeto de verdade (os boilers, os apps) tem seus próprios arquivos de configuração dentro de um diretório `config/` local. Este repositório serve como **consulta** na hora de criar ou atualizar esses arquivos.
+
+1. Vai criar um projeto novo? Consulta `settings/commands.md` para os comandos de instalação.
+2. Vai estruturar as configurações? Consulta `settings/configuracoes-ferramentas.md` para o padrão de organização.
+3. Vai configurar o agente de IA? Os guidelines estão em `agents/`.
