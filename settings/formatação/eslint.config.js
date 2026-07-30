@@ -1,4 +1,3 @@
-// Imports do ESLint
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
@@ -54,6 +53,7 @@ export default tseslint.config(
               '^vue$',
               '^pinia',
               '^vue-router',
+              'vue-i18n',
               '^vuetify',
               '^@mdi',
               '^axios',
