@@ -21,34 +21,38 @@
   "editor.insertSpaces": true,
   "files.autoSave": "afterDelay",
 
-  // ESLint 9+ Flat Config — caminho explícito para o arquivo de config
-  "eslint.useFlatConfig": true,
-  "eslint.configFile": "config/eslint.config.js",
-  "eslint.validate": ["vue", "javascript", "typescript", "html", "json"],
+  // ESLint 9+ Flat Config — caminho explícito via ESLint class API
+  "eslint.options": {
+    "overrideConfigFile": "config/eslint.config.js"
+  },
 
-  // Prettier — caminho explícito para o arquivo de config
-  "prettier.configPath": "config/prettier.config.cjs",
+  "eslint.validate": [
+    "html",
+    "css",
+    "scss",
+    "vue",
+    "typescript",
+    "javascript",
+    "json",
+    "jsonc",
+    "cjs"
+  ],
 
   // Executa correcoes automaticas do ESLint ao salvar, quando disponiveis.
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
   },
 
+  // Prettier — caminho explícito para o arquivo de config
+  "prettier.configPath": "config/prettier.config.cjs",
+
   // ==========================================
   // LANGUAGE SPECIFIC FORMATTERS
   // Formatadores especificos por linguagem
   // ==========================================
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
 
   // Define o Prettier como padrao para arquivos HTML.
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-
-  // Define o Prettier como padrao para arquivos TypeScript.
-  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
@@ -62,12 +66,36 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
+  // Define o Prettier como padrao para arquivos vue.
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Define o Prettier como padrao para arquivos TypeScript.
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Define o Prettier como padrao para arquivos javascript.
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Define o Prettier como padrao para arquivos cjs.
+  "[jsonc, cjs]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Define o Prettier como padrao para arquivos json.
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
   // ==========================================
   // IMPORTS & BEHAVIOR
   // Comportamentos automáticos da IDE
   // ==========================================
   "js/ts.updateImportsOnFileMove.enabled": "always",
-
   "git.openRepositoryInParentFolders": "always",
 
   // ==========================================
