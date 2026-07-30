@@ -95,3 +95,70 @@ Responsividade nativa, ícones no manifest, atenção a `icon`/`badge` em notifi
 - Itens de navegação derivados das rotas e metadados.
 - Preferências de usuário em stores Pinia com persistência centralizada.
 - Sem acesso direto a `localStorage` em componentes.
+
+## Contratos de Expose para Componentes de UI
+
+### Formulários Base
+
+`BaseForm.vue` utiliza `<script setup lang="ts" generic="T">` e expõe `IBaseFormExpose<T>`:
+
+```ts
+export interface IBaseFormExpose<TModel = unknown> {
+  refreshForm: (criarObjetoModel: (pData?: TModel) => TModel) => Promise<void>;
+  submit: () => void;
+  isValid: () => boolean;
+}
+```
+
+- `refreshForm` recebe uma factory que retorna o estado limpo/restaurado do modelo.
+- Formulários filhos devem expor `IForm<Nome>Expose` com `refreshForm()` e `submit()`.
+
+### Dialog Base
+
+`BaseDialog.vue` expõe `IBaseDialogExpose`:
+
+```ts
+export interface IBaseDialogExpose {
+  abrir: () => void;
+  fechar: () => void;
+  cancelar: () => void;
+  salvar: () => void;
+}
+```
+
+Usar `defineExpose({...} satisfies IBaseDialogExpose)`.
+
+### Dialog-Form Pattern
+
+Cada dialog de formulário deve seguir este contrato:
+
+```ts
+export interface IDialogForm<Nome>Expose {
+  exibicaoDialog: (pItem?: TNome) => void;
+  concluirSalvo: () => void;
+}
+```
+
+- `exibicaoDialog(pItem?)`: prepara dados e abre o dialog (modo edição se `pItem?.id` existe).
+- `concluirSalvo()`: fecha o dialog e limpa formulário após salvamento bem-sucedido.
+- `watch(exibirDialog)` dispara `handleRefresh()` ao fechar.
+- O form é referenciado via `ref<IForm<Nome>Expose>`.
+
+## Padrões de Consulta e Filtros
+
+- Filters options tipados via interface de opção de seleção.
+- View normaliza payloads de filtro para a API.
+- Services expõem método protegido de resolução de payload.
+- Services genéricos para consultas paginadas.
+- Formatters centralizados para transformação de dados (datas, booleanos, moeda).
+- Métodos de fetch devem receber payload tipado com filtros e retornar resultado paginado ou lista.
+
+## Gráficos
+
+- Dados de gráfico representados por `TDadoGrafico = { rotulo: string; valor: number; agrupador?: string }`.
+- Utilitário `gerarCores()` para paletas dinâmicas.
+- Views genéricas que suportam:
+  - Prop `exibirGraficos: boolean` — ativa coluna lateral de gráficos
+  - Prop `serviceExportacao` — método separado para exportação de dados
+  - Slot `#data-chart` — conteúdo personalizado do gráfico
+  - Emit `@toggle-chart` — notifica ao alternar visibilidade
