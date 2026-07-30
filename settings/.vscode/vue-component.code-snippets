@@ -3,6 +3,7 @@
     "prefix": "vsetup",
     "body": [
       // Imports acima
+      "<script setup lang='ts'>",
       "/**",
       " * @property {TIPO} $1 - $2",
       " */",
@@ -51,7 +52,8 @@
       "// Expose",
       "defineExpose({",
       "  $25",
-      "});"
+      "});",
+      "</script>"
     ],
     "description": "Estrutura padrao do <script setup> conforme padroes do projeto"
   },
