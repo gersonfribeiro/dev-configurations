@@ -1,0 +1,81 @@
+{
+  "Vue 3 Script Setup Padrao": {
+    "prefix": "vsetup",
+    "body": [
+      "type TProps = {",
+      "  $1",
+      "};",
+      "const props = defineProps<TProps>();",
+      "",
+      "type TEmits = {",
+      "  $2",
+      "};",
+      "",
+      "",
+      "const emit = defineEmits<TEmits>();",
+      "",
+      "// Constantes",
+      "const $3 = $4;",
+      "",
+      "// Reativas",
+      "const $5 = ref($6);",
+      "",
+      "// Funcoes",
+      "function $9(): void {",
+      "  $10",
+      "}",
+      "",
+      "// Computadas",
+      "const $7 = computed(() => {",
+      "  $8",
+      "});",
+      "",
+      "// Observadores",
+      "watch($11, () => {",
+      "  $12",
+      "});",
+      "",
+      "// Lifecycle Hooks",
+      "onMounted(() => {",
+      "  $13",
+      "});",
+      "",
+      "// Expose",
+      "defineExpose({",
+      "  $14",
+      "});"
+    ],
+    "description": "Estrutura padrao do <script setup> conforme padroes do projeto"
+  },
+  "Vue 3 Componente com Props": {
+    "prefix": "vprops",
+    "body": [
+      "type TProps = {",
+      "  $1",
+      "};",
+      "",
+      "const props = defineProps<TProps>();"
+    ],
+    "description": "Define props tipadas com type TProps"
+  },
+  "Vue 3 Emits Tipados": {
+    "prefix": "vemits",
+    "body": [
+      "type TEmits = {",
+      "  $1",
+      "};",
+      "",
+      "const emit = defineEmits<TEmits>();"
+    ],
+    "description": "Define emits tipados com type TEmits"
+  },
+  "Vue 3 Funcao com prefixo p": {
+    "prefix": "vfunc",
+    "body": [
+      "function ${1:nomeFuncao}(${2:pParam}: ${3:Tipo}): ${4:void} {",
+      "  $5",
+      "}"
+    ],
+    "description": "Funcao padrao com parametro prefixado com p"
+  }
+}
