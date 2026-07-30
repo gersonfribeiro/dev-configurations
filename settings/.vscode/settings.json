@@ -21,6 +21,14 @@
   "editor.insertSpaces": true,
   "files.autoSave": "afterDelay",
 
+  // ESLint 9+ Flat Config — caminho explícito para o arquivo de config
+  "eslint.useFlatConfig": true,
+  "eslint.configFile": "config/eslint.config.js",
+  "eslint.validate": ["vue", "javascript", "typescript", "html", "json"],
+
+  // Prettier — caminho explícito para o arquivo de config
+  "prettier.configPath": "config/prettier.config.cjs",
+
   // Executa correcoes automaticas do ESLint ao salvar, quando disponiveis.
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
