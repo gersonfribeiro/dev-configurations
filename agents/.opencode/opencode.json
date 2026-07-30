@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "instructions": [".opencode/AGENTS.md"],
   "mcp": {
     "MCP_DOCKER": {
       "type": "local",
@@ -32,8 +33,5 @@
       },
       "enabled": true
     }
-  },
-  "experimental": {
-    "mcp_timeout": 120000
   }
 }
