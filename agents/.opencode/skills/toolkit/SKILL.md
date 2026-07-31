@@ -17,3 +17,7 @@ Você opera dentro de um ambiente isolado via Docker. Esta skill define como voc
 
 ## 3. Segurança e Limites
 - Não altere configurações de rede ou derrube containers de banco de dados a menos que explicitamente solicitado pelo usuário para fins de reset de ambiente.
+
+## 4. Comunicação Inter-serviços
+- Se você receber erros de "health-check" ou "backend inalcançável" ao testar o frontend, verifique se o backend faz parte da mesma rede Docker.
+- Caso estejam no mesmo `docker-compose`, não use `host.docker.internal` para a comunicação entre eles. Use o nome do serviço definido no compose (ex: `http://backend:8080/health`).
