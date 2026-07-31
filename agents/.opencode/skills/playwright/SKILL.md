@@ -21,3 +21,7 @@ O Playwright é a sua ferramenta para "enxergar" a aplicação. Como IAs não po
 2. Identifique os seletores dos elementos problemáticos.
 3. Extraia as regras CSS ativas.
 4. Proponha a correção no código `.vue` baseada nos dados reais (e não em suposições).
+
+## 4. Isolamento de Frontend (Mocking)
+- Se a aplicação falhar ao carregar devido a dependências de backend (como "health-check falhou"), **não desista**. 
+- Utilize a API de roteamento do Playwright (`page.route()`) para interceptar requisições falhas e retornar um mock de sucesso (Status 200) com um payload genérico, permitindo que a interface seja renderizada para análise visual.
