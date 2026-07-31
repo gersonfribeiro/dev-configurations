@@ -18,7 +18,8 @@ npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-p
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "format:check": "prettier src --check",
   },
   "prettier": "./config/prettier.config.cjs"
 }
@@ -39,7 +40,7 @@ npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-p
 ```bash
 npm install -D @commitlint/cli @commitlint/config-conventional husky
 npx husky init
-echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+echo 'commitlint --config config/commitlint.config.cjs --edit "$1"' > .husky/commit-msg
 ```
 
 ### Scripts do commitlint + Husky para o `package.json`
@@ -47,6 +48,7 @@ echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 ```json
 {
   "scripts": {
+    "release": "standard-version --config config/.versionrc.cjs",
     "prepare": "husky"
   }
 }
@@ -62,7 +64,7 @@ echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 npm install -D @vite-pwa/assets-generator@^1.0.2
 ```
 
-### Scripts para o `package.json`
+### Scripts do Assets Generator para o `package.json`
 
 ```json
 {
@@ -79,6 +81,7 @@ Os arquivos de configuração padronizados estão neste repositório:
 - [`eslint.config.js`](./config/eslint.config.js) — Configuração do ESLint
 - [`prettier.config.cjs`](./config/prettier.config.cjs) — Configuração do Prettier
 - [`commitlint.config.cjs`](./config/commitlint.config.cjs) — Configuração do commitlint
+- [`.versionrc.cjs`](./config/.versionrc.cjs) — Configuração do standard-version alinhada com o commitlint
 - [`.editorconfig`](./.editorconfig) — Configuração do EditorConfig
 - [`pwa-assets.config.ts`](./config/pwa-assets.config.ts) - Configuração do plugin para o assets generator
 - [`.vscode/settings.json`](../settings/.vscode/settings.json) — Configurações do VS Code
