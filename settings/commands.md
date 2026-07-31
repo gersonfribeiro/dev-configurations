@@ -11,7 +11,7 @@ Este documento é parte do [repositório centralizador de configurações](../RE
 npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-plugin-prettier @eslint/js globals typescript typescript-eslint
 ```
 
-### Scripts para o `package.json`
+### Scripts do ESLint + Prettier (Vue 3 + TypeScript) para o `package.json`
 
 ```json
 {
@@ -19,17 +19,18 @@ npm install -D eslint eslint-plugin-vue prettier eslint-config-prettier eslint-p
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write"
-  }
+  },
+  "prettier": "./config/prettier.config.cjs"
 }
 ```
 
 ### Uso
 
-| Comando | Ação |
-|---|---|
-| `npm run lint` | Verifica problemas de lint |
-| `npm run lint:fix` | Corrige automaticamente problemas corrigíveis |
-| `npm run format` | Formata todo o projeto com Prettier |
+|       Comando       |                      Ação                      |
+|---------------------|------------------------------------------------|
+| `npm run lint`      | Verifica problemas de lint                     |
+| `npm run lint:fix`  | Corrige automaticamente problemas corrigíveis  |
+| `npm run format`    | Formata todo o projeto com Prettier            |
 
 ---
 
@@ -41,7 +42,7 @@ npx husky init
 echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 ```
 
-### Scripts para o `package.json`
+### Scripts do commitlint + Husky para o `package.json`
 
 ```json
 {
