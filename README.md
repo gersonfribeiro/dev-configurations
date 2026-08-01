@@ -28,4 +28,5 @@ Cada projeto de verdade (os boilers, os apps) tem seus próprios arquivos de con
 
 1. Vai criar um projeto novo? Consulta `settings/commands.md` para os comandos de instalação.
 2. Vai estruturar as configurações? Consulta `settings/configuracoes-ferramentas.md` para o padrão de organização.
-3. Vai configurar o agente de IA? Os guidelines estão em `agents/`.
+3. Vai configurar um backend Java com Maven? Consulta `settings/configuracoes-backend-java.md` para o fluxo de qualidade, commits e releases.
+4. Vai configurar o agente de IA? Os guidelines estão em `agents/`.
