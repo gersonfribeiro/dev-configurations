@@ -99,15 +99,17 @@ Formatadores de dados devem ser centralizados em uma classe utilitária com mét
 
 Carregue a skill correspondente ao domínio da tarefa:
 
-| Skill        | Quando ativar                                                                      |
-| ------------ | ---------------------------------------------------------------------------------- |
-| `backend`    | Trabalhando com Java, Spring Boot, APIs REST                                       |
-| `cicd`       | Configurando pipelines de integração/entrega contínua, Docker, Kubernetes e cloud  |
-| `context7`   | Buscando e validando documentações oficiais de bibliotecas e frameworks (Oráculo)  |
-| `entregas`   | Executando tarefas de entrega: testes, build, lint, setup de ferramentas           |
-| `kafka`      | Lidando com mensageria, eventos assíncronos e infraestrutura de tópicos            |
-| `pencil`     | Prototipando interfaces (pen.dev) e mantendo estruturação visual sem corromper UI  |
-| `playwright` | Inspecionando o DOM, extraindo CSS real ou rodando testes E2E no frontend          |
-| `sonarqube`  | Analisando qualidade de código, débitos técnicos, segurança e code smells          |
-| `toolkit`    | Interagindo com o ambiente Docker, CLI e rede do container (MCP_DOCKER)            |
-| `vue`        | Trabalhando com Vue 3, Vuetify, Pinia, composables, componentes                    |
+| Skill             | Quando ativar                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| `backend`         | Trabalhando com Java, Spring Boot, APIs REST                                       |
+| `boilerplate-vue` | Trabalhando com projetos vue originais de boilerplate-vue                          |
+| `cicd`            | Configurando pipelines de integração/entrega contínua, Docker, Kubernetes e cloud  |
+| `context7`        | Buscando e validando documentações oficiais de bibliotecas e frameworks (Oráculo)  |
+| `entregas`        | Executando tarefas de entrega: testes, build, lint, setup de ferramentas           |
+| `kafka`           | Lidando com mensageria, eventos assíncronos e infraestrutura de tópicos            |
+| `pencil`          | Prototipando interfaces (pen.dev) e mantendo estruturação visual sem corromper UI  |
+| `playwright`      | Inspecionando o DOM, extraindo CSS real ou rodando testes E2E no frontend          |
+| `sc`              | Instruções para as aplicações integradas com a nossa Software Center               |
+| `sonarqube`       | Analisando qualidade de código, débitos técnicos, segurança e code smells          |
+| `toolkit`         | Interagindo com o ambiente Docker, CLI e rede do container (MCP_DOCKER)            |
+| `vue`             | Trabalhando com Vue 3, Vuetify, Pinia, composables, componentes                    |
