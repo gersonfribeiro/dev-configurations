@@ -1,17 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": [".opencode/AGENTS.md"],
+  "skills": {
+    "paths": [
+      "~/.agents/skills"
+    ]
+  },
   "mcp": {
-    "MCP_DOCKER": {
-      "type": "local",
-      "command": [
-        "docker.exe",
-        "mcp",
-        "gateway",
-        "run",
-        "--profile",
-        "<nome_profile_docker_toolkit>"
-      ],
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
       "enabled": true
     },
     "pencil": {
@@ -25,12 +26,16 @@
       ],
       "enabled": true
     },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-      },
+    "MCP_DOCKER": {
+      "type": "local",
+      "command": [
+        "docker.exe",
+        "mcp",
+        "gateway",
+        "run",
+        "--profile",
+        "<nome_profile_docker_toolkit>"
+      ],
       "enabled": true
     }
   }
